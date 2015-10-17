@@ -9,9 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-String facebook = "http://www.facebook.com/atiartalukder";
+
+    String facebook = "https://www.facebook.com/pavel.mia.98";
     String googlePlus = "https://plus.google.com/101964313154309150953/posts";
-    String twitter = "https://twitter.com/atiartalukdar";
+    String twitter = "https://twitter.com/mdpavelsarkar";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,18 +22,26 @@ String facebook = "http://www.facebook.com/atiartalukder";
 
 
     public void facebook(View view){
-        Uri webPage = Uri.parse(facebook);
-        Intent intent = new Intent(Intent.ACTION_VIEW,webPage);
+
+        Intent intent = new Intent(MainActivity.this,webView.class);
+        intent.putExtra("url",facebook);
         startActivity(intent);
     }
     public void googleplus(View view){
-        Uri webPage = Uri.parse(googlePlus);
+        /*Uri webPage = Uri.parse(googlePlus);
         Intent intent = new Intent(Intent.ACTION_VIEW,webPage);
+        startActivity(intent);*/
+        Intent intent = new Intent(MainActivity.this,webView.class);
+        intent.putExtra("url",googlePlus);
         startActivity(intent);
     }
     public void twitter(View view){
-        Uri webPage = Uri.parse(twitter);
+       /* Uri webPage = Uri.parse(twitter);
         Intent intent = new Intent(Intent.ACTION_VIEW,webPage);
+        startActivity(intent);*/
+
+        Intent intent = new Intent(MainActivity.this,webView.class);
+        intent.putExtra("url",twitter);
         startActivity(intent);
     }
 
